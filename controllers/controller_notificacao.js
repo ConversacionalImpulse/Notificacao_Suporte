@@ -3,6 +3,7 @@ const axios = require('axios');
 
 exports.notificacao = async (req, res) => {
     const {cliente, setor, telefone} = req.body
+    console.log(cliente, setor, telefone)
     
     const token = process.env.token;
     const URL = 'https://api.zenvia.com/v2/channels/whatsapp/messages';
@@ -18,10 +19,10 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
                     fields: {
-                        responsavel: 'Daniel',
-                        cliente: cliente,
-                        setor: setor,
-                        telefone: telefone,
+                        responsavel: `Daniel`,
+                        username: `${cliente}`,
+                        telefone: `${telefone}`,
+                        setor: `${setor}`
                     }
                 }
             ]
@@ -31,7 +32,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        //Myvson
+        // Myvson
         const response2 = await axios.post(URL, {
             from: '558399088426',
             to: '5583999932745',
@@ -40,10 +41,10 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
                     fields: {
-                        responsavel: "Myvson",
-                        cliente: cliente,
-                        setor: setor,
-                        telefone: telefone,
+                        responsavel: `Myvson`,
+                        username: `${cliente}`,
+                        telefone: `${telefone}`,
+                        setor: `${setor}`
                     }
                 }
             ]
@@ -53,7 +54,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        //Rafa
+        // Rafael
         const response3 = await axios.post(URL, {
             from: '558399088426',
             to: '5583999733555',
@@ -62,10 +63,10 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
                     fields: {
-                        responsavel: 'Rafael',
-                        cliente: cliente,
-                        setor: setor,
-                        telefone: telefone,
+                        responsavel: `Rafael`,
+                        username: `${cliente}`,
+                        telefone: `${telefone}`,
+                        setor: `${setor}`
                     }
                 }
             ]
@@ -75,7 +76,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        //Ígara
+        // Ígara
         const response4 = await axios.post(URL, {
             from: '558399088426',
             to: '5583988218106',
@@ -84,10 +85,10 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
                     fields: {
-                        responsavel: 'Ígara',
-                        cliente: cliente,
-                        setor: setor,
-                        telefone: telefone,
+                        responsavel: `Ígara`,
+                        username: `${cliente}`,
+                        telefone: `${telefone}`,
+                        setor: `${setor}`
                     }
                 }
             ]
@@ -97,7 +98,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        //André
+        // André
         const response5 = await axios.post(URL, {
             from: '558399088426',
             to: '5583996128134',
@@ -106,10 +107,10 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
                     fields: {
-                        responsavel: 'André',
-                        cliente: cliente,
-                        setor: setor,
-                        telefone: telefone,
+                        responsavel: `André`,
+                        username: `${cliente}`,
+                        telefone: `${telefone}`,
+                        setor: `${setor}`
                     }
                 }
             ]
@@ -120,7 +121,7 @@ exports.notificacao = async (req, res) => {
             },
         });
 
-        console.log(response.data, response2.data, response3.data, response4.data, response5.data);
+        console.log("Sucesso com os dados")
         return res.json({sucess: true});
 
     } catch (error) {
