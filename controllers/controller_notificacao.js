@@ -32,7 +32,6 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        /*
         // Myvson
         const response2 = await axios.post(URL, {
             from: '558399088426',
@@ -80,7 +79,7 @@ exports.notificacao = async (req, res) => {
         // Ígara
         const response4 = await axios.post(URL, {
             from: '558399088426',
-            to: '5583988218106',
+            to: '5588988218106',
             contents: [
                 {
                     type: 'template',
@@ -121,7 +120,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
-        */
+        
 
         console.log("Sucesso com os dados")
         return res.json({sucess: true});
