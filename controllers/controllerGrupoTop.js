@@ -12,7 +12,7 @@ exports.notificacao = async (req, res) => {
         // Daniel
         const response = await axios.post(URL, {
             from: '558399088426',
-            to: '5511915841820', 
+            to: '5583999415087', 
             contents: [
                 {
                     type: 'template',
