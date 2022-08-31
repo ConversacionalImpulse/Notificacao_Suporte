@@ -12,16 +12,15 @@ exports.notificacao = async (req, res) => {
         // Daniel
         const response = await axios.post(URL, {
             from: '558399088426',
-            to: '5583999415087',
+            to: '5511915841820', 
             contents: [
                 {
                     type: 'template',
-                    templateId: 'eee42c0b-22a6-44aa-a7bf-7fc32e942b5d',
+                    templateId: '1bbf7596-51c6-4f2d-aaa7-01c3d5adf912',
                     fields: {
-                        responsavel: `Daniel`,
+                        responsavel: `Beatriz`,
                         username: `${username}`,
-                        telefone: `${telefone}`,
-                        setor: `${setor}`
+                        telefone: `${telefone}`
                     }
                 }
             ]
