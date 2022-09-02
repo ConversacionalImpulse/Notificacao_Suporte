@@ -57,6 +57,7 @@ exports.notificacao = async (req, res) => {
         });
         
         // Rafael
+        /*
         const response3 = await axios.post(URL, {
             from: '558399088426',
             to: '5583999733555',
@@ -123,6 +124,7 @@ exports.notificacao = async (req, res) => {
                 'Content-Type': 'application/json',
             },
         });
+        */
         
 
         console.log("Sucesso com os dados")
