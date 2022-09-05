@@ -9,7 +9,7 @@ exports.notificacao = async (req, res) => {
     
     
     try {
-        // Daniel
+        // Beatriz
         const response = await axios.post(URL, {
             from: '558399088426',
             to: '5511915841820', 
@@ -19,6 +19,27 @@ exports.notificacao = async (req, res) => {
                     templateId: '1bbf7596-51c6-4f2d-aaa7-01c3d5adf912',
                     fields: {
                         responsavel: `Beatriz`,
+                        username: `${username}`,
+                        telefone: `${telefone}`
+                    }
+                }
+            ]
+        }, {
+            headers: {
+                'X-API-TOKEN': token,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const response1 = await axios.post(URL, {
+            from: '558399088426',
+            to: '5583999415087', 
+            contents: [
+                {
+                    type: 'template',
+                    templateId: '1bbf7596-51c6-4f2d-aaa7-01c3d5adf912',
+                    fields: {
+                        responsavel: `Daniel`,
                         username: `${username}`,
                         telefone: `${telefone}`
                     }
