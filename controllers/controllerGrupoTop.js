@@ -11,7 +11,7 @@ exports.notificacao = async (req, res) => {
     try {
         // Beatriz
         const response = await axios.post(URL, {
-            from: '558399088426',
+            from: '5511992066621',
             to: '5511915841820', 
             contents: [
                 {
@@ -32,7 +32,7 @@ exports.notificacao = async (req, res) => {
         });
 
         const response1 = await axios.post(URL, {
-            from: '558399088426',
+            from: '5511992066621',
             to: '5583999415087', 
             contents: [
                 {
