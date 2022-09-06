@@ -54,7 +54,7 @@ exports.notificacao = async (req, res) => {
         });
 
         console.log("Sucesso com os dados")
-        return res.json({sucess: true});
+        return res.json({sucess: true})
 
     } catch (error) {
         console.log(error);  
