@@ -29,7 +29,7 @@ exports.notificacao = async (req, res) => {
             ]
         }, {
             headers: {
-                'X-API-TOKEN': token,
+                'X-API-TOKEN': "YCCtizC5Vbygh1-_nQY_z056j5OS_5kCGfjq",
                 'Content-Type': 'application/json',
             },
         });
