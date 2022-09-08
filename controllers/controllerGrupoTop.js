@@ -20,7 +20,7 @@ exports.notificacao = async (req, res) => {
                     type: 'template',
                     templateId: '1d835a32-a5a2-4796-8937-a2d75dd5d684',
                     fields: {
-                        responsavel: `Beatriz`,
+                        responsavel: `${responsavel}`,
                         assunto: `${assunto}`,
                         username: `${username}`,
                         telefone: `${telefone}`
