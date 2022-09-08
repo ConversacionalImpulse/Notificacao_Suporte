@@ -14,7 +14,7 @@ exports.notificacao = async (req, res) => {
         
         const response = await axios.post(URL, {
             from: '5511992066621',
-            to: '5583999415087', 
+            to: '5511915841820', 
             contents: [
                 {
                     type: 'template',
