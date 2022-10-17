@@ -10,20 +10,19 @@ exports.informacoes = async (req, res) => {
         const dia = zeroAEsquerda(data.getDate());
         const mes = zeroAEsquerda(data.getMonth() + 1);
         const ano = zeroAEsquerda(data.getFullYear());
-        const hora = zeroAEsquerda(data.getHours());
-
+    
         return `${dia}/${mes}/${ano}`;
     }
 
     function formataHora(data) {
-        const hora = zeroAEsquerda(data.getHours());
+        const hora = zeroAEsquerda(data.getHours() -3);
         const minutos = zeroAEsquerda(data.getMinutes());
         const segundos = zeroAEsquerda(data.getSeconds());
 
 
         return `${hora}:${minutos}:${segundos}`;
     }
-    const Hora = dataAtual.getHours();
+    const Hora = dataAtual.getHours() -3;
     const Minutos = dataAtual.getMinutes();
 
     const dataBrasil = formataData(dataAtual);
