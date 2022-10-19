@@ -28,6 +28,7 @@ exports.informacoes = async (req, res) => {
     const dataBrasil = formataData(dataAtual);
     const horaBrasil = formataHora(dataAtual);
     console.log(dataBrasil, horaBrasil)
+    console.log(typeof Hora)
    
     return res.json({data: dataBrasil, horario: horaBrasil, hora: Hora, minutos: Minutos });
     
