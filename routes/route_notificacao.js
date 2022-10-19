@@ -5,7 +5,7 @@ const controllerGrupoTop = require('../controllers/controllerGrupoTop.js')
 const controllerHorario = require('../controllers/controllerHorario.js')
 
 routes.post('/notificacao', controllerComercial.notificacao)
-routes.post('/notificacaoComercial', controller.notificacao)
+routes.post('/notificacaoComercial', controller.notificacaoComercial)
 routes.post('/notificacaoGrupoTop', controllerGrupoTop.notificacao)
 routes.get('/diaEHora', controllerHorario.informacoes)
 
