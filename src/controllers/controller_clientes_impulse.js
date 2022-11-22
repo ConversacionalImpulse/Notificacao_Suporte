@@ -3,6 +3,7 @@ const prisma = new PrismaClient()
 
 exports.buscar_usuario = async (req, res) => {
     const { telefone } = req.body;
+    await prisma.$connect()
     const verifica_cadastro = await prisma.usuarios.findMany({
         where: {
             telefone: telefone
@@ -17,6 +18,7 @@ exports.buscar_usuario = async (req, res) => {
 
 exports.cadastrar_usuario = async (req, res) => {
     const { nome, telefone } = req.body;
+    await prisma.$connect()
     const usuario_cadastrado = await prisma.usuarios.create({
         data: {
             nome: nome,
