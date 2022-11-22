@@ -4,7 +4,7 @@ const prisma = new PrismaClient()
 exports.buscar_usuario = async (req, res) => {
     const {telefone} = req.body;
     await prisma.$connect()
-    const verifica_cadastro = await prisma.clientes.findMany({
+    const verifica_cadastro = await prisma.usuarios.findMany({
         where: {
             telefone: telefone
         }
