@@ -2,25 +2,24 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 exports.buscar_usuario = async (req, res) => {
-    const { telefone } = req.body;
-    try{
+    const {telefone} = req.body;
     await prisma.$connect()
-    const verifica_usuario = await prisma.usuarios.findMany({
-        where:{
+    const verifica_cadastro = await prisma.clientes.findMany({
+        where: {
             telefone: telefone
         }
     })
-
-    if(verifica_usuario.length > 0){
-        res.json({cadastrado: true, dados: verifica_cadastro})
+    
+    if(verifica_cadastro.length > 0){
+        res.json({
+            cadastrado: true,
+            verifica_cadastro
+        })
     } else {
-        res.json({cadastrado: false})
-    }
-
-    } catch (error) {
-        console.log(error);  
-        return res.json({sucess: false, msg: 'Ops! algo deu errado'});
-    }
+        res.json({
+            cadastrado: false
+        })
+    } 
 }
 
 exports.cadastrar_usuario = async (req, res) => {
