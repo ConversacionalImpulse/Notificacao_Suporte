@@ -16,7 +16,7 @@ exports.buscar_usuario = async (req, res) => {
     } else {
         res.json({cadastrado: false})
     }
-    
+
     } catch (error) {
         console.log(error);  
         return res.json({sucess: false, msg: 'Ops! algo deu errado'});
