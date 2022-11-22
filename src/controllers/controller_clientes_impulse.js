@@ -10,15 +10,16 @@ exports.buscar_usuario = async (req, res) => {
             telefone: telefone
         }
     })
-    } catch (error) {
-        console.log(error);  
-        return res.json({sucess: false, msg: 'Ops! algo deu errado'});
-    }
 
     if(verifica_cadastro.length > 0){
         res.json({cadastrado: true, dados: verifica_cadastro})
     } else {
         res.json({cadastrado: false})
+    }
+    
+    } catch (error) {
+        console.log(error);  
+        return res.json({sucess: false, msg: 'Ops! algo deu errado'});
     }
 }
 
