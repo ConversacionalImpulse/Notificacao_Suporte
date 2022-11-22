@@ -5,13 +5,13 @@ exports.buscar_usuario = async (req, res) => {
     const { telefone } = req.body;
     try{
     await prisma.$connect()
-    const verifica_cadastro = await prisma.usuarios.findMany({
-        where: {
+    const verifica_usuario = await prisma.usuarios.findMany({
+        where:{
             telefone: telefone
         }
     })
 
-    if(verifica_cadastro.length > 0){
+    if(verifica_usuario.length > 0){
         res.json({cadastrado: true, dados: verifica_cadastro})
     } else {
         res.json({cadastrado: false})
