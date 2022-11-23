@@ -20,3 +20,9 @@ model Users {
   nome     String
   telefone String
 }
+
+model Teste {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  nome     String
+  telefone String @unique
+}

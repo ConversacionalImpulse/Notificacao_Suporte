@@ -1,19 +1,18 @@
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 exports.cadastrar_usuarios = async (req, res) => {
-    const {nome, telefone} = req.body;
-    try{
-    const usuario_cadastrado = await prisma.usuarios.create({
-        data: {
-            nome: nome,
-            telefone: telefone
-        }
-    })
+  const { nome, telefone } = req.body;
+  try {
+    const usuario_cadastrado = await prisma.Teste.create({
+      data: {
+        nome: nome,
+        telefone: telefone,
+      },
+    });
 
-    return res.json({cadastrado: true, usuario_cadastrado})
-    } catch (error) {
-        res.json({cadastrado: false})
-    }
-
-}
+    return res.json({ cadastrado: true, usuario_cadastrado });
+  } catch (error) {
+    res.json({ cadastrado: false });
+  }
+};
