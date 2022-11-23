@@ -13,16 +13,14 @@ model Clientes {
   email    String @unique
   telefone String @unique
   empresa  String
+
+  @@map("clientes")
 }
 
 model Users {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   nome     String
-  telefone String
-}
-
-model Teste {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  nome     String
   telefone String @unique
+
+  @@map("users")
 }

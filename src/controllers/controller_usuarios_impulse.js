@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 exports.cadastrar_usuarios = async (req, res) => {
   const { nome, telefone } = req.body;
   try {
-    const usuario_cadastrado = await prisma.Teste.create({
+    const usuario_cadastrado = await prisma.usuarios.create({
       data: {
         nome: nome,
         telefone: telefone,
