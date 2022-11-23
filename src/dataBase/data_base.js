@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-exports.connectToDB = () => {
+const connectToDB = () => {
     mongoose.connect(
         process.env.DATABASE_URL,
         { useNewUrlParser: true, useUnifiedTopology: true }
@@ -9,4 +9,6 @@ exports.connectToDB = () => {
         console.log("MongoDB Atlas CONECTADO!");
       })
       .catch((e) => console.log(e));
-  };
+};
+
+module.exports = connectToDB
