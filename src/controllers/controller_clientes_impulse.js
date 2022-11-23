@@ -42,7 +42,7 @@ exports.buscar_cliente = async (req, res) => {
         })
     } else {
         res.json({
-            cadastrado: false
+            cadastrado: verifica_cadastro
         })
     }
     
