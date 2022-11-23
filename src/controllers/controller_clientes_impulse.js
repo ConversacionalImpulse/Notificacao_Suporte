@@ -27,6 +27,7 @@ exports.cadastrar_cliente = async (req, res) =>{
 
 exports.buscar_cliente = async (req, res) => {
     const {telefone} = req.body;
+    console.log("cheguei aqui")
     await prisma.$connect()
     const verifica_cadastro = await prisma.clientes.findMany({
         where: {
