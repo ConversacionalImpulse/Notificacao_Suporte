@@ -25,11 +25,12 @@ exports.buscar_cliente = async (req, res) => {
 
         if(verifica_cadastro.length > 0){
             res.json({
+                cadastrado: true,
                 verifica_cadastro
             })
         } else {
             res.json({
-                clientes: false
+                cadastrado: false
             })
         }
     } catch(error) {
