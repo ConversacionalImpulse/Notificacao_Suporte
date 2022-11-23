@@ -13,6 +13,7 @@ exports.cadastrar_usuarios = async (req, res) => {
 
     return res.json({ cadastrado: true, usuario_cadastrado });
   } catch (error) {
+    console.log(error)
     res.json({ cadastrado: false });
   }
 };
