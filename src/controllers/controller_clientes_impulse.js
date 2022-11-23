@@ -27,18 +27,14 @@ exports.cadastrar_cliente = async (req, res) =>{
 
 exports.buscar_cliente = async (req, res) => {
     const {telefone} = req.body;
-    
-    prisma.$connect().then(() => {
-        console.log('Mongo conectado!')
-    })
-    
+
     const verifica_cadastro = await prisma.clientes.findMany({
         where: {
             telefone: telefone
         }
     })
 
-    
+    console.log(verifica_cadastro)
     if(verifica_cadastro.length > 0){
         res.json({
             cadastrado: true,
