@@ -15,8 +15,8 @@ model Clientes {
   empresa  String
 }
 
-model Usuarios {
+model Users {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   nome     String
-  telefone String @unique
+  telefone String
 }
