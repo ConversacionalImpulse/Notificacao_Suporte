@@ -8,19 +8,11 @@ datasource db {
 }
 
 model Clientes {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
   nome     String
-  email    String @unique
-  telefone String @unique
-  empresa  String
+  email    String? @unique
+  telefone String  @unique
+  empresa  String?
 
   @@map("clientes")
-}
-
-model Users {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  nome     String
-  telefone String @unique
-
-  @@map("users")
 }
