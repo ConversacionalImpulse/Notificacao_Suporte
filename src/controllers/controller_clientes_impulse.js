@@ -38,3 +38,16 @@ exports.buscar_cliente = async (req, res) => {
         res.json({cadatrado: false})
     } 
 }
+
+exports.editar_cliente = async (req, res) => {
+    const {nome, telefone, email, empresa } = req.body;
+    try{
+        const dados_editados = await dados_clientes.updateOne({telefone: telefone}, {nome: nome, email: email, empresa: empresa})
+        res.json({
+            update: true
+        })
+    } catch (error){
+        console.log(error)
+        res.json({update: false})
+    }
+}

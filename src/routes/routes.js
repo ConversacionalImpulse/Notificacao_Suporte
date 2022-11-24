@@ -15,5 +15,6 @@ routes.get('/diaEHora', controller_horario.informacoes);
 //Rota de Cadastros do Suporte da Impulse
 routes.post('/cadastroClienteImpulse', controller_clientes_impulse.cadastrar_cliente)
 routes.post('/buscarClienteImpulse', controller_clientes_impulse.buscar_cliente)
+routes.post('/editarClienteImpulse', controller_clientes_impulse.editar_cliente)
 
 module.exports = routes;
