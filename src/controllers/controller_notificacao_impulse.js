@@ -3,7 +3,7 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 
 exports.notificacao = async (req, res) => {
-    const {cliente, setor, telefone, empresa} = req.body
+    const {cliente, setor, telefone} = req.body
     const senha = 'hyatdcyavvnagzof';
     
     const token = process.env.token;
