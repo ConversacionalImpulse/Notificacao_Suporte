@@ -17,7 +17,7 @@ exports.notificacao = async (req, res) => {
     try {
         await transport.sendMail({
             from: 'Daniel Sarmento <daniel.impulseb@gmail.com>',
-            to: ['danielsarmento2@hotmail.com','danielsarmento14@gmail.com', email],
+            to: ['danielsarmento2@hotmail.com', email],
             subject: 'Novo Suporte Impulse',
             html: `
             <h1>Olá, ${cliente}!</h1> 
