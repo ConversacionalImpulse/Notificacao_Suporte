@@ -3,8 +3,7 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 
 exports.notificacao = async (req, res) => {
-    const {cliente, setor, telefone} = req.body
-    console.log(cliente, setor, telefone)
+    const {cliente, setor, telefone, empresa} = req.body
     const senha = 'hyatdcyavvnagzof';
     
     const token = process.env.token;
@@ -47,7 +46,7 @@ exports.notificacao = async (req, res) => {
             from: 'Daniel Sarmento <daniel.impulseb@gmail.com>',
             to: ['danielsarmento2@hotmail.com','danielsarmento14@gmail.com'],
             subject: 'Teste de Envio com Nodemailer',
-            html: `<h1>Suporte Impulse</h1> <h4>Suporte Solicitado</h4> <p>Dados do Cliente:</p> <p>Telefone:${telefone}</p> <p>Nome:${cliente}</p> <p>Setor:${setor}</p>`,
+            html: `<h1>Suporte Impulse</h1> <p>Acabamos de receber um novo chamado no suporte da Impulse, segue abaixo os dados do solicitante.</p> <h4>Dados do Cliente:</h4> <p>Telefone: ${telefone}</p> <p>Nome do Solicitante: ${cliente}</p> <p>Empresa: ${empresa}</p> <p>Setor: ${setor}</p> <p>Verificar o mais rápido possível o Zchat da empresa.</p>`,
             text: 'Hello World!'
         })
         // Myvson
