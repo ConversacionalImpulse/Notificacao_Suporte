@@ -3,6 +3,7 @@ const controller_notificacao_impulse = require('../controllers/controller_notifi
 const controller_notificacao_grupoTop = require('../controllers/controller_notificacao_grupoTop.js');
 const controller_horario = require('../controllers/controller_horario.js');
 const controller_clientes_impulse = require('../controllers/controller_clientes_impulse.js');
+const controller_notificacao_email = require('../controllers/controller_notificacao_email')
 
 
 //Rotas de Notificação
@@ -16,5 +17,8 @@ routes.get('/diaEHora', controller_horario.informacoes);
 routes.post('/cadastroClienteImpulse', controller_clientes_impulse.cadastrar_cliente)
 routes.post('/buscarClienteImpulse', controller_clientes_impulse.buscar_cliente)
 routes.post('/editarClienteImpulse', controller_clientes_impulse.editar_cliente)
+
+// Rota de envio de e-mail
+routes.post('/email', controller_notificacao_email.notificacao)
 
 module.exports = routes;
