@@ -45,9 +45,9 @@ exports.notificacao = async (req, res) => {
         await transport.sendMail({
             from: 'Daniel Sarmento <daniel.impulseb@gmail.com>',
             to: ['danielsarmento2@hotmail.com','danielsarmento14@gmail.com'],
-            subject: 'Teste de Envio com Nodemailer',
-            html: `<h1>Suporte Impulse</h1> <p>Acabamos de receber um novo chamado no suporte da Impulse, segue abaixo os dados do solicitante.</p> <h4>Dados do Cliente:</h4> <p>Telefone: ${telefone}</p> <p>Nome do Solicitante: ${cliente}</p> <p>Empresa: ${empresa}</p> <p>Setor: ${setor}</p> <p>Verificar o mais rápido possível o Zchat da empresa.</p>`,
-            text: 'Hello World!'
+            subject: 'Novo Suporte Impulse',
+            html: `<h1>Suporte Impulse</h1> <p>Acabamos de receber um novo chamado no suporte da Impulse, segue abaixo os dados do solicitante.</p> <h4>Dados do Cliente:</h4> <p>Telefone: ${telefone}</p> <p>Nome do Solicitante: ${cliente}</p> <p>Setor: ${setor}</p> <h6>Verificar o mais rápido possível o Zchat da empresa.</h6>`,
+            text: 'Suporte Impulse'
         })
         // Myvson
         /*
