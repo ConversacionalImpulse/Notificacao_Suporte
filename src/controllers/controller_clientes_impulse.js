@@ -21,16 +21,16 @@ exports.buscar_cliente = async (req, res) => {
     const {telefone} = req.body;
 
     try{
-        const verifica_cadastro = await dados_clientes.find({telefone})
+        const verifica_cadastro = await dados_clientes.findOne({telefone})
 
-        if(verifica_cadastro.length > 0){
+        if(!verifica_cadastro){
             res.json({
-                cadastrado: true,
-                verifica_cadastro
+                cadastrado: false
             })
         } else {
             res.json({
-                cadastrado: false
+                cadastrado: true,
+                verifica_cadastro
             })
         }
     } catch(error) {
