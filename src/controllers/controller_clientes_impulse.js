@@ -2,6 +2,11 @@ const dados_clientes = require('../models/model_clientes.js')
 
 exports.cadastrar_cliente = async (req, res) =>{
     const { nome, telefone, email, empresa} = req.body;
+    
+    if(!empresa){
+        return empresa = "Não Especificado"
+    }
+
     try{
         const cliente = await dados_clientes.create({
                 nome: nome,
