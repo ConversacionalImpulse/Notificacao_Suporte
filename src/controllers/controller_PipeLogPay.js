@@ -1,3 +1,4 @@
+const axios = require('axios');
 exports.create = async (req, res) => {
   const {nome, empresa, nivel, mensagem} = req.body
     const pipeId = "303117720";
@@ -17,7 +18,7 @@ exports.create = async (req, res) => {
     }
     
     try{
-        const novoCardEmpresa = await fetch('https://api.pipefy.com/graphql',{
+        /* const novoCardEmpresa = await fetch('https://api.pipefy.com/graphql',{
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
@@ -34,10 +35,40 @@ exports.create = async (req, res) => {
                                   }) 
                                   { card {id title }}}`
                         })
-        });
+        }); */
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIxNTk5NTQsImVtYWlsIjoiZGFuaWVsLmltcHVsc2ViQGdtYWlsLmNvbSIsImFwcGxpY2F0aW9uIjozMDAyMTcyNTB9fQ.OPT1Bn55gTEq7IMaJdTkdYuGf5vufNlnDKXYGzsnYEXz4Ny1zB6mXQZN5at4EpPbCH_THZXMoAcsyS1eDvOHwA"
+          }
+        };
         
-        const dataEmpresa = await novoCardEmpresa.json();
-        return res.status(200).json(dataEmpresa)
+        const data = {
+          "query": `mutation{ createCard (input: {pipe_id:${pipeId}  phase_id:${phaseId}  fields_attributes: [
+              {field_id: "nome_do_respons_vel", field_value: "${nome}"},
+              {field_id: "empresa", field_value: "${empresa}"},
+              {field_id: "n_vel_do_ticket", field_value: "${nivel}"},
+              {field_id: "data_da_cria_o_do_ticket", field_value: "${formataData(dataAtual)}"},
+              {field_id: "detalhes_sobre_o_suporte", field_value: "${mensagem}"}
+            ]
+              }) 
+              { card {id title }}}`
+        };
+        
+        const url = 'https://api.pipefy.com/graphql';
+        
+        axios.post(url, data, config)
+          .then((response) => {
+            const novoCardEmpresa = response.data;
+            console.log(novoCardEmpresa);
+            return res.status(200).end()
+          })
+          .catch((error) => {
+            console.error(error);
+          }); 
+        
+        /* const dataEmpresa = await novoCardEmpresa.json();
+        return res.status(200).json(dataEmpresa) */
 
     } catch (err){
         console.error(err)
