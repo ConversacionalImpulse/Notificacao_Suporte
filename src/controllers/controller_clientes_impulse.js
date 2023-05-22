@@ -20,6 +20,7 @@ exports.cadastrar_cliente = async (req, res) =>{
 
 exports.buscar_cliente = async (req, res) => {
     const {telefone} = req.body;
+    console.log(telefone)
 
     try{
         const verifica_cadastro = await dados_clientes.findOne({telefone})
