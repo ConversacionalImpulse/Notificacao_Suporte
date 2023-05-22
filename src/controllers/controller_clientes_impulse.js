@@ -20,10 +20,10 @@ exports.cadastrar_cliente = async (req, res) =>{
 
 exports.buscar_cliente = async (req, res) => {
     const {telefone} = req.body;
-    console.log(telefone)
+    let telefoneEditado = telefone.replace(/\+/g, '')
 
     try{
-        const verifica_cadastro = await dados_clientes.findOne({telefone})
+        const verifica_cadastro = await dados_clientes.findOne({telefoneEditado})
 
         if(!verifica_cadastro){
             res.json({
