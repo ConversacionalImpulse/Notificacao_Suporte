@@ -2,11 +2,12 @@ const dados_clientes = require('../models/model_clientes.js')
 
 exports.cadastrar_cliente = async (req, res) =>{
     const { nome, telefone, email, empresa} = req.body;
+    let telefoneEditado = telefone.replace(/\+/g, '');
 
     try{
         const cliente = await dados_clientes.create({
                 nome: nome,
-                telefone: telefone,
+                telefone: telefoneEditado,
                 email: email,
                 empresa: empresa
         })
@@ -43,8 +44,9 @@ exports.buscar_cliente = async (req, res) => {
 
 exports.editar_cliente = async (req, res) => {
     const {nome, telefone, email, empresa } = req.body;
+    let telefoneEditado = telefone.replace(/\+/g, '');
     try{
-        const dados_editados = await dados_clientes.updateOne({telefone: telefone}, {nome: nome, email: email, empresa: empresa})
+        const dados_editados = await dados_clientes.updateOne({telefone: telefoneEditado}, {nome: nome, email: email, empresa: empresa})
         res.json({
             update: true
         })
